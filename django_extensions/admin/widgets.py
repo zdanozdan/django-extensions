@@ -1,4 +1,4 @@
-import six
+from django.utils import six
 import django
 from django import forms
 from django.conf import settings

@@ -62,8 +62,8 @@ class Command(BaseCommand):
         """simple single entry per line in the format of:
             "full name" <my@address.com>;
         """
-        out.write(six.u("\n").join(six.u('"%s" <%s>;' % (full_name(**ent), ent['email']))
-                                   for ent in qs).encode(self.encoding))
+        #out.write(six.u("\n").join(six.u('"%s" <%s>;' % (full_name(**ent), ent['email'])) for ent in qs).encode(self.encoding))
+        out.write("\n".join('"%s" <%s>;' % (full_name(**ent), ent['email']) for ent in qs).encode(self.encoding))
         out.write("\n")
 
     def emails(self, qs, out):
